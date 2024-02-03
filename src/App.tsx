@@ -1,26 +1,18 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PdfEditor from './components/PdfViewer/PdfEditor';
+import PdfViewer from "./components/PdfViewer/PdfViewer";
 
-function App() {
+const App: React.FC = () => {
+  // Provide the URL of the PDF you want to display
+  const pdfUrl = 'http://localhost:3000/modifiedPdf - 2024-02-02T195521.983.pdf';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <h1>PDF Editor</h1>
+        <PdfViewer pdfUrl={pdfUrl} />
+      </div>
   );
-}
+};
 
 export default App;
